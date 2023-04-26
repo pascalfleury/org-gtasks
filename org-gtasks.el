@@ -318,7 +318,7 @@
             "  :ID: " id "\n"
             "  :END:\n"
             (when notes (concat notes "\n"))
-            (when links
+            (when (and links (not (zerop (length links))))
               (concat "\n  :links:\n"
                       (mapconcat (lambda (link)
                                    (let* ((type (plist-get link :type))
