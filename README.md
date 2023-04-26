@@ -76,3 +76,9 @@ Possible actions are: (defined in `org-gtasks-actions`)
 ## Limitations
 
 Currently, `org-gtasks` does not understand or map the hierachical structure of tasks.
+
+## Contributions
+
+Mailing list: https://lists.sr.ht/~jmasson/org-gtasks
+
+Bug/Feature tracker: [todo](https://todo.sr.ht/~jmasson/org-gtasks)
