@@ -324,7 +324,7 @@
                                    (let* ((type (plist-get link :type))
                                           (org-link (plist-get link :link))
                                           (desc (plist-get link :description))
-                                          (str (org-make-link-string org-link desc)))
+                                          (str (org-link-make-string org-link desc)))
                                      (format "  - %s: %s\n" type str)))
                                  links "")
                       "  :end:\n")))))
@@ -344,7 +344,7 @@
       (goto-char (point-min))
       (when tasks
         (org-sort-entries nil ?o)
-        (org-set-startup-visibility))
+        (org-cycle-set-startup-visibility))
       (save-buffer))))
 
 (defun org-gtasks-tasks-cb (account tasklist write-p data)
@@ -591,7 +591,7 @@
     data))
 
 (defun org-gtasks-push-tasklists-cb (account add-data tasklist &optional data)
-  (org-gtasks-fetch-tasks account tasklist)
+  (org-gtasks-fetch-tasks account t tasklist)
   (org-gtasks-add-tasklists account add-data))
 
 (defun org-gtasks-add-tasklists-cb (account add-data &optional data)
